@@ -16,6 +16,8 @@ int digit_printer(int n, int counter);
 int my_int_printer(int num, int counter);
 int print_binary(int n, int counter);
 int second_switch(va_list args, char format, int counter);
-int unsigned_int_printer(int num, int counter);
-
+int unsigned_int_printer(unsigned int num, int counter);
+int print_octal(unsigned int num, int counter);
+int print_hexadecimal(unsigned int num, int counter);
+int print_second_hexadecimal(unsigned int num, int counter);
 #endif

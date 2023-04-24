@@ -89,14 +89,10 @@ int print_binary(int n, int counter)
  *unsigned_int_printer - prints unsigned nums
  *@num: to be printed
  *@counter: counts
- *Return: returns counter
+ *Return: returns countern
  */
-int unsigned_int_printer(int num, int counter)
+int unsigned_int_printer(unsigned int num, int counter)
 {
-	if (num < 0)
-	{
-		num = -num;
-	}
 	if (num < 10)
 	{
 		my_putchar(num + '0');
@@ -104,8 +100,79 @@ int unsigned_int_printer(int num, int counter)
 	}
 	else
 	{
-		counter = my_int_printer(num / 10, counter);
-		counter = my_int_printer(num % 10, counter);
+		counter = unsigned_int_printer(num / 10, counter);
+		counter = unsigned_int_printer(num % 10, counter);
+	}
+	return (counter);
+}
+/**
+ *print_octal - prints octal nums
+ *@num: to be printed
+ *@counter: counts
+ *Return: returns counter
+ */
+int print_octal(unsigned int num, int counter)
+{
+	int octal_num[100];
+	int i = 0;
+	int j;
+
+	while (num != 0)
+	{
+		octal_num[i] = num % 8;
+		num /= 8;
+		i++;
+	}
+	if (i == 0)
+	{
+		my_putchar('0');
+		counter++;
+	}
+	else
+	{
+		for (j = i - 1; j >= 0; j--)
+		{
+			my_putchar(octal_num[j] + '0');
+			counter++;
+		}
+	}
+	return (counter);
+}
+/**
+ *print_hexadecimal - prints hexadecimal nums
+ *@num: to be printed
+ *@counter: counts
+ *Return: returns counter
+ */
+int print_hexadecimal(unsigned int num, int counter)
+{
+	char hexadecimal_num[100];
+	int i = 0;
+	int j;
+
+	while (num != 0)
+	{
+		int remainder = num % 16;
+
+		if (remainder < 10)
+			hexadecimal_num[i] = remainder + '0';
+		else
+			hexadecimal_num[i] = remainder + 'a' - 10;
+		num /= 16;
+		i++;
+	}
+	if (i == 0)
+	{
+		my_putchar('0');
+		counter++;
+	}
+	else
+	{
+		for (j = i - 1; j >= 0; j--)
+		{
+			my_putchar(hexadecimal_num[j]);
+			counter++;
+		}
 	}
 	return (counter);
 }

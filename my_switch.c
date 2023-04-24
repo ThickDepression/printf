@@ -52,10 +52,13 @@ int second_switch(va_list args, char format, int counter)
 			counter = unsigned_int_printer(va_arg(args, int), counter);
 			break;
 		case 'o':
+			counter = print_octal(va_arg(args, int), counter);
 			break;
 		case 'x':
+			counter = print_hexadecimal(va_arg(args, int), counter);
 			break;
 		case 'X':
+			counter = print_second_hexadecimal(va_arg(args, int), counter);
 			break;
 		default:
 			my_putchar('%');
