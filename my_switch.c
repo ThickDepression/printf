@@ -38,3 +38,32 @@ int my_switch(va_list args, char format, int counter)
 	}
 	return (counter);
 }
+
+/**
+ *second_switch - our second switch that goes between cases
+ *@args: arguments
+ *@format: list of argument types
+ *@counter: counter
+ *Return: returns counter
+ */
+
+int second_switch(va_list args, char format, int counter)
+{
+	switch (format)
+	{
+		case 'u':
+			break;
+		case 'o':
+			break;
+		case 'x':
+			break;
+		case 'X':
+			break;
+		default:
+			my_putchar('%');
+			my_putchar(format);
+			counter += 2;
+			break;
+	}
+	return (counter);
+}
