@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
+#include <limits.h>
 
 int _printf(const char * const format, ...);
 int my_switch(va_list args, char format, int counter);
