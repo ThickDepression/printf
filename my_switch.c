@@ -31,9 +31,7 @@ int my_switch(va_list args, char format, int counter)
 			counter = print_binary(va_arg(args, int), counter);
 			break;
 		default:
-			my_putchar('%');
-			my_putchar(format);
-			counter += 2;
+			second_switch(args, format, counter);
 			break;
 	}
 	return (counter);
