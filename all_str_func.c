@@ -68,3 +68,32 @@ int my_strlen(const char *s)
 	}
 	return (counter);
 }
+
+/**
+ *spcl_chr - prints the non printable chr
+ *@s: string to be converted
+ *@counter: counts
+ *Return: returns
+ */
+
+int spcl_chr(const char *s, int counter)
+{
+	while (*s != '\0')
+	{
+		if (*s < 32 || *s >= 127)
+		{
+			my_putchar('\\');
+			my_putchar('x');
+			my_putchar((*s / 16) + '0');
+			my_putchar((*s % 16) + ((*s % 16 < 10) ? '0' : 'A' - 10));
+			counter += 4;
+		}
+		else
+		{
+			my_putchar(*s);
+			counter++;
+		}
+		s++;
+	}
+	return (counter);
+}

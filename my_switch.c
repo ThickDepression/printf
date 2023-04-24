@@ -30,6 +30,9 @@ int my_switch(va_list args, char format, int counter)
 		case 'b':
 			counter = print_binary(va_arg(args, int), counter);
 			break;
+		case 'S':
+			counter = spcl_chr(va_arg(args, char *), counter);
+			break;
 		default:
 			return (second_switch(args, format, counter));
 	}
