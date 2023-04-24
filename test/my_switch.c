@@ -28,7 +28,7 @@ int my_switch(va_list args, char format, int counter)
 			counter = my_int_printer(va_arg(args, int), counter);
 			break;
 		case 'b':
-			counter = my_binary(va_arg(args, int), counter);
+			counter = print_binary(va_arg(args, int), counter);
 			break;
 		default:
 			my_putchar('%');
