@@ -16,14 +16,11 @@ int digit_printer(int n, int counter);
 int my_int_printer(int num, int counter);
 int print_binary(int n, int counter);
 int second_switch(va_list args, char format, int counter);
-<<<<<<< HEAD
 int unsigned_int_printer(unsigned int num, int counter);
 int print_octal(unsigned int num, int counter);
 int print_hexadecimal(unsigned int num, int counter);
 int print_second_hexadecimal(unsigned int num, int counter);
-=======
 int unsigned_int_printer(int num, int counter);
 int spcl_chr(const char *s, int counter);
 
->>>>>>> 4f7acada2c4467527e3f2a4515786337e4b49d91
 #endif
