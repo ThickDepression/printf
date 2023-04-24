@@ -8,7 +8,7 @@
  *Return: retrns counter
  */
 
-int my_switch(va_list args, char format, int counter)  //counter = 10
+int my_switch(va_list args, char format, int counter)
 {
 	switch (format)
 	{
@@ -31,8 +31,7 @@ int my_switch(va_list args, char format, int counter)  //counter = 10
 			counter = print_binary(va_arg(args, int), counter);
 			break;
 		default:
-			return second_switch(args, format, counter); 
-			break;
+			return (second_switch(args, format, counter));
 	}
 	return (counter);
 }
