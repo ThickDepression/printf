@@ -49,6 +49,7 @@ int second_switch(va_list args, char format, int counter)
 	switch (format)
 	{
 		case 'u':
+			counter = unsigned_int_printer(va_arg(args, int), counter);
 			break;
 		case 'o':
 			break;

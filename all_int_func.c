@@ -85,3 +85,27 @@ int print_binary(int n, int counter)
 
 	return (counter);
 }
+/**
+ *unsigned_int_printer - prints unsigned nums
+ *@num: to be printed
+ *@counter: counts
+ *Return: returns counter
+ */
+int unsigned_int_printer(int num, int counter)
+{
+	if (num < 0)
+	{
+		num = -num;
+	}
+	if (num < 10)
+	{
+		my_putchar(num + '0');
+		counter++;
+	}
+	else
+	{
+		counter = my_int_printer(num / 10, counter);
+		counter = my_int_printer(num % 10, counter);
+	}
+	return (counter);
+}
