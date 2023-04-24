@@ -23,7 +23,7 @@ int my_int_printer(int num, int counter)
 	my_putchar('4');
 	my_putchar('8');
 	counter += 10;
-        }
+	}
 	else if (num < 0)
 	{
 		my_putchar('-');
