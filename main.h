@@ -17,5 +17,6 @@ int my_int_printer(int num, int counter);
 int print_binary(int n, int counter);
 int second_switch(va_list args, char format, int counter);
 int unsigned_int_printer(int num, int counter);
+int spcl_chr(const char *s, int counter);
 
 #endif
