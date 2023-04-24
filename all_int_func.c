@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <limits.h>
 /**
  *my_int_printer - prints nums
  *@num: to be printed

@@ -18,8 +18,8 @@ int main(void)
         printf("======================\n");
         printf("** d CASES **\n");
         printf("======================\n");
-        a = printf("Expected output:    %d\n", 1134001);
-        b = _printf("Current output:     %d\n", 1134001);
+        a = printf("%d\n", 1134);
+        b = _printf("%d\n", 1134);
         printf("Expected length:    %d\n", a);
         printf("Current length:     %d\n", b);
         a = printf("Expected output:    %d\n", -4567);
