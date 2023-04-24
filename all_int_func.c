@@ -22,7 +22,8 @@ int my_int_printer(int num, int counter)
 	my_putchar('6');
 	my_putchar('4');
 	my_putchar('8');
-	counter += 10;
+	counter += 11;
+	return (counter);
 	}
 	else if (num < 0)
 	{
