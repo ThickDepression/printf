@@ -20,7 +20,6 @@ int unsigned_int_printer(unsigned int num, int counter);
 int print_octal(unsigned int num, int counter);
 int print_hexadecimal(unsigned int num, int counter);
 int print_second_hexadecimal(unsigned int num, int counter);
-int unsigned_int_printer(int num, int counter);
 int spcl_chr(const char *s, int counter);
 
 #endif
