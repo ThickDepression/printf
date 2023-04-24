@@ -14,6 +14,6 @@ int my_str_printer(char *str, int counter);
 int my_strlen(const char *s);
 int digit_printer(int n, int counter);
 int my_int_printer(int num, int counter);
-int my_binary(unsigned int num, int counter);
+int print_binary(int n, int counter);
 
 #endif

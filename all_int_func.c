@@ -43,38 +43,45 @@ int my_int_printer(int num, int counter)
 	}
 	return (counter);
 }
+
 /**
- *my_binary - convert binary
- *@num: num to be converted
- *@counter: counts
- *Return: returns
+ * print_binary - Prints the binary representation of an unsigned int
+ * @n: Tnumber
+ * @counter: counts
+ * Return: returns counter
  */
 
-int my_binary(unsigned int num, int counter)
+int print_binary(int n, int counter)
 {
-	int i = 0;
-	int j;
-	int rev_len;
-	char *rev_binary;
-	char binary[100];
+	unsigned int num;
+	int i, j;
+	char binary[32];
 
-	while (num > 0)
+	num = n;
+	if (num > UINT_MAX)
 	{
-		binary[i] = num % 2 + '0';
-		num = num / 2;
-		i++;
+		my_str_printer("(null)", counter);
+		return (counter);
+	}
+	if (num == 0)
+	{
+		my_putchar('0');
+		counter++;
+		return (counter);
+	}
+
+	for (i = 0; num > 0; i++)
+	{
+		binary[i] = (num % 2 == 1) ? '1' : '0';
+		num /= 2;
 	}
 	binary[i] = '\0';
-	rev_len = my_strlen(binary);
-	rev_binary = malloc((rev_len + 1) * sizeof(char));
-	if (rev_binary == NULL)
-		return (-1);
-	for (i = rev_len - 1, j = 0; i >= 0; i--, j++)
+
+	for (j = i - 1; j >= 0; j--)
 	{
-		rev_binary[j] = binary[i];
+		my_putchar(binary[j]);
+		counter++;
 	}
-	rev_binary[j] = '\0';
-	counter = my_str_printer(rev_binary, counter);
-	free(rev_binary);
+
 	return (counter);
 }
