@@ -80,7 +80,7 @@ int addr_printer(void *addr, int counter)
 }
 
 /**
- *_print_rev_recursion - a function that prints a string in reverse.
+ *rev_str_printer - a function that prints a string in reverse.
  *@s: pointer to a string
  *@counter: counts
  *Return: counter
@@ -88,16 +88,18 @@ int addr_printer(void *addr, int counter)
 
 int rev_str_printer(char *s, int counter)
 {
+	int i = my_strlen(s);
+	int a;
+
 	if (s == NULL)
 	{
 		my_str_printer("(nil)", counter);
-		return (counter);	
+		return (counter);
 	}
 
-	if (*s)
+	for (a = i - 1; a >= 0; a--)
 	{
-		rev_str_printer(s + 1, counter);
-		my_putchar(*s);
+		putchar(s[a]);
 		counter++;
 	}
 	return (counter);
