@@ -50,8 +50,14 @@ int addr_printer(void *addr, int counter)
 	int i;
 	int hex_digit;
 	int printed_prefix = 0;
-	unsigned long int address = (unsigned long int)addr;
+	unsigned long int address;
 
+	if (addr == NULL)
+	{
+		my_str_printer("(nil)", counter);
+		return (counter);
+	}
+	address = (unsigned long int)addr;
 	my_putchar('0');
 	my_putchar('x');
 	counter += 2;
