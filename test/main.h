@@ -16,5 +16,6 @@ int digit_printer(int n, int counter);
 int my_int_printer(int num, int counter);
 int print_binary(int n, int counter);
 int spcl_chr(const char *s, int counter);
+int addr_printer(void *addr, int counter);
 
 #endif

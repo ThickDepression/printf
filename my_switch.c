@@ -63,6 +63,9 @@ int second_switch(va_list args, char format, int counter)
 		case 'X':
 			counter = print_second_hexadecimal(va_arg(args, int), counter);
 			break;
+		case 'p':
+			counter = addr_printer(va_arg(args, void *), counter);
+			break;
 		default:
 			my_putchar('%');
 			my_putchar(format);

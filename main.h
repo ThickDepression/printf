@@ -21,5 +21,6 @@ int print_octal(unsigned int num, int counter);
 int print_hexadecimal(unsigned int num, int counter);
 int print_second_hexadecimal(unsigned int num, int counter);
 int spcl_chr(const char *s, int counter);
+int addr_printer(void *addr, int counter);
 
 #endif

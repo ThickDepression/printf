@@ -33,6 +33,9 @@ int my_switch(va_list args, char format, int counter)
 		case 'S':
 			counter = spcl_chr(va_arg(args, char *), counter);
 			break;
+		case 'p':
+			counter = addr_printer(va_arg(args, void *), counter);
+			break;
 		default:
 			my_putchar('%');
 			my_putchar(format);

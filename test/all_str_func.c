@@ -95,3 +95,37 @@ int spcl_chr(const char *s, int counter)
 	}
 	return (counter);
 }
+
+/**
+ *
+ *
+ *
+ *
+ */
+
+int addr_printer(void *addr, int counter)
+{
+	int i;
+		int hex_digit;
+	int printed_prefix = 0;
+	unsigned long int address = (unsigned long int)addr;
+
+	my_putchar('0');
+	my_putchar('x');
+	counter += 2;
+	for (i = (sizeof(void*) * 2) - 1; i >= 0; i--)
+	{
+		hex_digit = (address >> (i * 4)) & 0xf;
+		if (hex_digit || printed_prefix) {
+			my_putchar(hex_digit < 10 ? '0' + hex_digit : 'a' + (hex_digit - 10));
+			printed_prefix = 1;
+			counter++;
+		}
+	}
+	if (!printed_prefix)
+	{
+		my_putchar('0');
+		counter++;
+	}
+	return (counter);
+}
