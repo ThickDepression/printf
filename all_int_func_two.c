@@ -78,3 +78,22 @@ int addr_printer(void *addr, int counter)
 	}
 	return (counter);
 }
+
+/**
+ *_print_rev_recursion - a function that prints a string in reverse.
+ *@s: pointer to a string
+ *@counter: counts
+ *Return: counter
+ */
+
+int rev_str_printer(char *s, int counter)
+{
+
+	if (*s)
+	{
+		rev_str_printer(s + 1, counter);
+		my_putchar(*s);
+		counter++;
+	}
+	return (counter);
+}
