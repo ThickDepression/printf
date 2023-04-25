@@ -54,7 +54,7 @@ int addr_printer(void *addr, int counter)
 
 	if (addr == NULL)
 	{
-		my_str_printer("(nil)", counter);
+		counter = my_str_printer("(nil)", counter);
 		return (counter);
 	}
 	address = (unsigned long int)addr;
@@ -93,13 +93,53 @@ int rev_str_printer(char *s, int counter)
 
 	if (s == NULL)
 	{
-		my_str_printer("(nil)", counter);
+		counter = my_str_printer("(nil)", counter);
 		return (counter);
 	}
 
 	for (a = i - 1; a >= 0; a--)
 	{
-		putchar(s[a]);
+		my_putchar(s[a]);
+		counter++;
+	}
+	return (counter);
+}
+
+/**
+ *rot13 - rotate 13 time
+ *@str: string to be rotated
+ *@counter: counts
+ *Return: counter
+ */
+
+int rot13(char *str, int counter)
+{
+	int i, len;
+	char ch;
+	char rot_upchr[26] = {"NOPQRSTUVWXYZABCDEFGHIJKLM"};
+	char rot_lwchr[26] = {"nopqrstuvwxyzabcdefghijklm"};
+
+	if (str == NULL)
+	{
+		counter = my_str_printer("(nil)", counter);
+		return (counter);
+	}
+	len = my_strlen(str);
+	for (i = 0; i < len; i++)
+	{
+		ch = str[i];
+		if ((ch >= 97 && ch <= 122) || (ch >= 65 && ch <= 90))
+		{
+			if (ch >= 97 && ch <= 122)
+			{
+				ch = rot_lwchr[ch - 'a'];
+			}
+			else
+			{
+				ch = rot_upchr[ch - 'A'];
+			}
+		}
+		my_putchar(ch);
 		counter++;
 	}
 	return (counter);

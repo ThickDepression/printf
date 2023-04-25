@@ -39,6 +39,9 @@ int my_switch(va_list args, char format, int counter)
 		case 'r':
 			counter = rev_str_printer(va_arg(args, char *), counter);
 			break;
+		case 'R':
+			counter = rot13(va_arg(args, char *), counter);
+			break;
 		default:
 			my_putchar('%');
 			my_putchar(format);

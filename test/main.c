@@ -9,8 +9,7 @@
  */
 int main(void)
 {
-
-    _printf("Unknown:[%r]\n", "hellow");
+    _printf("%R\n",  "Hello, world!");
 
     return (0);
 }

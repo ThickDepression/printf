@@ -1,5 +1,46 @@
 #include <unistd.h>
+#include "main.h"
 
+/**
+ *
+ *
+ *
+ *
+ *
+ */
+
+int rot13(char *str, int counter)
+{
+	int i, len;
+	char ch;
+	char rot_upchr[26] = {"NOPQRSTUVWXYZABCDEFGHIJKLM"};
+	char rot_lwchr[26] = {"nopqrstuvwxyzabcdefghijklm"};
+
+	if (str == NULL)
+	{
+		counter = my_str_printer("(nil)", counter);
+		return (counter);
+	}
+	len = my_strlen(str);
+	for (i = 0; i < len; i++)
+	{
+		ch = str[i];
+		if ((ch >= 97 && ch <= 122) || (ch >= 65 && ch <= 90))
+		{
+			if (ch >= 97 && ch <= 122)
+			{
+				ch = rot_lwchr[ch - 'a'];
+			}
+			else
+			{
+				ch = rot_upchr[ch - 'A'];
+			}
+		}
+		my_putchar(ch);
+		counter++;
+	}
+	return (counter);
+}
 /**
  * my_putchar - writes the character c to stdout
  * @c: The character to print
@@ -191,3 +232,5 @@ int rev_str_printer(char *s, int counter)
 	}
 	return (counter);
 }
+
+
