@@ -88,6 +88,11 @@ int addr_printer(void *addr, int counter)
 
 int rev_str_printer(char *s, int counter)
 {
+	if (s == NULL)
+	{
+		my_str_printer("(nil)", counter);
+		return (counter);	
+	}
 
 	if (*s)
 	{
