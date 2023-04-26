@@ -19,5 +19,6 @@ int spcl_chr(const char *s, int counter);
 int addr_printer(void *addr, int counter);
 int rev_str_printer(char *s, int counter);
 int rot13(char *str, int counter);
+int flags_handler(int num, int counter);
 
 #endif

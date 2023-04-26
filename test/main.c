@@ -9,7 +9,10 @@
  */
 int main(void)
 {
-    _printf("%R\n",  "Hello, world!");
+    _printf("%+i\n", -2);
+    _printf("%+i\n", 100);
+    _printf("%+d\n", 0);
+    _printf("%+d\n", -4);
 
     return (0);
 }

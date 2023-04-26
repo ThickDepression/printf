@@ -31,6 +31,8 @@ int _printf(const char * const format, ...)
 		}
 		if (*(format + i) == '%')
 		{
+			if (format[i + 1] == 43)
+				i++;
 			counter = my_switch(args, format[i + 1], counter);
 			i++;
 		}

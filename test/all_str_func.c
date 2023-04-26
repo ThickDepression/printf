@@ -144,42 +144,7 @@ int spcl_chr(const char *s, int counter)
  *
  */
 
-/*int addr_printer(void *addr, int counter)
-{
-	unsigned long int address;
-	char *nil_str;
-        int e;
-	int i, j, hex_digit;
-	char hex_digits[16] = "0123456789abcdef";
-	char buffer[sizeof(void *) * 2 + 3];
-
-	address = (unsigned long int) addr;
-
-	if (addr == NULL)
-	{
-		nil_str = "(nil)";
-		for (e = 0; nil_str[e] != '\0'; e++)
-		{
-			my_putchar(nil_str[e]);
-		}
-		return (counter + e);
-	}
-	for (i = sizeof(void *) * 2 - 1, j = 0; i >= 0; i--, j++)
-	{
-		hex_digit = (address >> (i * 4)) & 0xf;
-		buffer[j] = hex_digits[hex_digit];
-	}
-	buffer[j] = '\0';
-	my_putchar('0');
-	my_putchar('x');
-	counter += 2;
-	for (i = 0; buffer[i] != '\0'; i++)
-	{
-		my_putchar(buffer[i]);
-		counter++;
-	}
-	return (counter);
-}*/
+/**/
 
 int addr_printer(void *addr, int counter)
 {

@@ -10,6 +10,8 @@
 
 int my_switch(va_list args, char format, int counter)
 {
+	va_list arg_copy;
+	int num_handler;
 	switch (format)
 	{
 		case '%':
@@ -41,6 +43,14 @@ int my_switch(va_list args, char format, int counter)
 			break;
 		case 'R':
 			counter = rot13(va_arg(args, char *), counter);
+			break;
+		case '+':
+			if ((format + 1) == 'd' || (format + 1) == 'i')
+			{
+				va_copy(arg_copy, args);
+				num_handler = va_arg(arg_copy, int);
+				counter = flags_handler(num_handler, counter);
+			}
 			break;
 		default:
 			my_putchar('%');
